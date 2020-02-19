@@ -63,15 +63,11 @@ class Owner
   end
 
   def sell_pets
-    @pets.each do |type, name_array|
-      name_array.each do |pet|
-        pet.mood = "nervous"
-        #name_array.delete(pet)
-      end
+    pets.each do |type, pets|
+      pets.map {|pet| pet.mood = "nervous"}
     end
-    @pets = {}
+    pets.clear
   end
-
   def list_pets
     return "I have #{@dogs.count} dog(s), and #{@cats.count} cat(s)."
   end
