@@ -63,11 +63,14 @@ class Owner
   end
 
   def sell_pets
-    pets.each do |type, pets|
-      pets.map {|pet| pet.mood = "nervous"}
+    @pets.collect do |species, instances|
+      instances.each do |pet|
+        pet.mood = "nervous"
+      end
+      instances.clear
     end
-    pets.clear
   end
+  
   def list_pets
     return "I have #{@dogs.count} dog(s), and #{@cats.count} cat(s)."
   end
