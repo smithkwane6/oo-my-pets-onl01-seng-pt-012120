@@ -63,11 +63,13 @@ class Owner
   end
 
   def sell_pets
-    @pets.each do |species, species_array|
-      species_array.each {|pet| pet.mood= "nervous" }
-      species_array.clear
-    end
-  end
+    @pets.each do |pet_type, pet_array|
+    pet_array.each do |pet|
+      pet.mood = "nervous"
+    end 
+  end 
+   pets.clear
+ end 
 
   def list_pets
     return "I have #{@dogs.count} dog(s), and #{@cats.count} cat(s)."
