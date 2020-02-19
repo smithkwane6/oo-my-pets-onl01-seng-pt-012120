@@ -3,7 +3,7 @@ class Dog
   attr_reader :name
   attr_accessor :mood, :owner
 
-  @@all = [] 
+  @@all = []
 
 
   def initialize(name, owner)
@@ -13,15 +13,15 @@ class Dog
     @@all << self
     self.owner = @owner
     owner.dogs << self if !@owner.dogs.include?(self)
-  end 
+  end
 
-   def self.all 
+   def self.all
     @@all
-  end 
+  end
 
   def self.clear
     @@all.clear
-  end 
+  end
 
 
 end
