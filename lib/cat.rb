@@ -7,20 +7,20 @@ class Cat
   @@all = []
 
   def initialize(name, owner)
-    @name = name 
+    @name = name
     @mood = "nervous"
     @owner = owner
     @@all << self
     owner.cats << self if !@owner.cats.include?(self)
-  end 
+  end
 
 
-  def self.all 
+  def self.all
     @@all
-  end 
+  end
 
   def self.clear
     @@all.clear
-  end 
+  end
 
 end
