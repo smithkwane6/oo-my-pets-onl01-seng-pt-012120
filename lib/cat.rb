@@ -1,20 +1,26 @@
 class Cat
   # code goes here
-  attr_accessor :owner, :mood
+
+  attr_accessor :mood, :owner
   attr_reader :name
 
-  @@all = [ ]
+  @@all = []
 
   def initialize(name, owner)
-      @name = name
-      @owner = owner
-      @@all << self
-      @owner.pets=(self)
-      @mood = "nervous"
-  end
+    @name = name 
+    @mood = "nervous"
+    @owner = owner
+    @@all << self
+    owner.cats << self if !@owner.cats.include?(self)
+  end 
 
-  def self.all
-      @@all
-  end
+
+  def self.all 
+    @@all
+  end 
+
+  def self.clear
+    @@all.clear
+  end 
 
 end
