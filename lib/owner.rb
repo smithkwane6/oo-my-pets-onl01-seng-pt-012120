@@ -1,6 +1,6 @@
 class Owner
   # code goes here
-end 
+end
   attr_reader :name, :species
   attr_accessor :cats, :dogs
 
